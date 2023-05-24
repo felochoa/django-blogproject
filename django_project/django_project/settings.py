@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog.apps.BlogConfig', # new app
+    'accounts.apps.AccountsConfig', #sign up app
 ]
 
 MIDDLEWARE = [
@@ -123,3 +124,8 @@ STATICFILES_DIRS = [BASE_DIR / "static"] #we tell django where to look for the s
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#redirect URL when a user login
+LOGIN_REDIRECT_URL = "home"
+#redirect URL when a user logout
+LOGOUT_REDIRECT_URL = "home"

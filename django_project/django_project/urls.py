@@ -18,7 +18,13 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    
+    #account url - authentication 
+    path("accounts/", include("django.contrib.auth.urls")),
+    #urls of the accopunts app
+    path("accounts/", include("accounts.urls")),
+    path("", include("blog.urls")),
     #empty string "" adn indicate tjhar requests should be redirected as is to 
     #blog´s urls for further instructions
-    path("", include("blog.urls")), 
+
 ]
